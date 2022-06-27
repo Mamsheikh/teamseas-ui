@@ -1,0 +1,31 @@
+query TotalDonations {
+  totalDonations
+}
+
+subscription TotalUpdated {
+  totalUpdated {
+    total
+  }
+}
+
+query Donations($orderBy: OrderByParams) {
+  donations(orderBy: $orderBy) {
+    count
+    createdAt
+    displayName
+    id
+    message
+    team
+  }
+}
+
+mutation CreateDonation($createDonationInput: CreateDonationInput!) {
+  createDonation(createDonationInput: $createDonationInput) {
+    count
+    createdAt
+    displayName
+    id
+    message
+    team
+  }
+}
